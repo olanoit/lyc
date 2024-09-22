@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosas Amarillas para Lesly</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fff8dc;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffa500;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #8b4513;
+            margin-bottom: 30px;
+        }
+
+        .rose {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        /* Creando los pétalos de la rosa */
+        .rose::before,
+        .rose::after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background-color: #ffd700; /* Color amarillo */
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .rose::before {
+            transform: rotate(45deg);
+        }
+
+        .rose::after {
+            transform: rotate(-45deg);
+        }
+
+        /* Creando el tallo */
+        .stem {
+            width: 10px;
+            height: 150px;
+            background-color: green;
+            position: absolute;
+            bottom: -150px;
+            left: 45px;
+        }
+
+        /* Hojas del tallo */
+        .leaf {
+            width: 20px;
+            height: 40px;
+            background-color: green;
+            position: absolute;
+        }
+
+        .leaf.left {
+            left: -20px;
+            top: 60px;
+            transform: rotate(-45deg);
+        }
+
+        .leaf.right {
+            right: -20px;
+            top: 60px;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Para Lesly</h1>
+        <p>Con todo mi amor, siempre recordaré que eres mi sol en los días más grises.</p>
+        <div class="rose">
+            <div class="stem"></div>
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+        </div>
+        <div class="rose">
+            <div class="stem"></div>
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+        </div>
+        <div class="rose">
+            <div class="stem"></div>
+            <div class="leaf left"></div>
+            <div class="leaf right"></div>
+        </div>
+        
+        
+    </div>
+
+    <!-- Incluyendo la librería anime.js para animación -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+        // Animación de las rosas
+        anime({
+            targets: '.rose',
+            scale: [0.8, 1.2],
+            duration: 2000,
+            direction: 'alternate',
+            loop: true,
+            easing: 'easeInOutQuad'
+        });
+    </script>
+</body>
+</html>
